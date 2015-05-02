@@ -13,6 +13,8 @@
 		F11974F61AF3C2EA003B2D86 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F11974F51AF3C2EA003B2D86 /* Images.xcassets */; };
 		F11974F91AF3C2EA003B2D86 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F11974F71AF3C2EA003B2D86 /* LaunchScreen.xib */; };
 		F11975051AF3C2EA003B2D86 /* PopUpDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11975041AF3C2EA003B2D86 /* PopUpDemoTests.swift */; };
+		F119750F1AF3CA7E003B2D86 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F119750E1AF3CA7E003B2D86 /* PopUpViewController.swift */; };
+		F11975131AF3D000003B2D86 /* DimmingPresentationCotroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11975121AF3D000003B2D86 /* DimmingPresentationCotroller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		F11974FE1AF3C2EA003B2D86 /* PopUpDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PopUpDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F11975031AF3C2EA003B2D86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F11975041AF3C2EA003B2D86 /* PopUpDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpDemoTests.swift; sourceTree = "<group>"; };
+		F119750E1AF3CA7E003B2D86 /* PopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
+		F11975121AF3D000003B2D86 /* DimmingPresentationCotroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimmingPresentationCotroller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,8 @@
 				F11974EE1AF3C2EA003B2D86 /* AppDelegate.swift */,
 				F11974F01AF3C2EA003B2D86 /* ViewController.swift */,
 				F11974F21AF3C2EA003B2D86 /* Main.storyboard */,
+				F119750E1AF3CA7E003B2D86 /* PopUpViewController.swift */,
+				F11975121AF3D000003B2D86 /* DimmingPresentationCotroller.swift */,
 				F11974F51AF3C2EA003B2D86 /* Images.xcassets */,
 				F11974F71AF3C2EA003B2D86 /* LaunchScreen.xib */,
 				F11974EC1AF3C2EA003B2D86 /* Supporting Files */,
@@ -212,7 +218,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F11975131AF3D000003B2D86 /* DimmingPresentationCotroller.swift in Sources */,
 				F11974F11AF3C2EA003B2D86 /* ViewController.swift in Sources */,
+				F119750F1AF3CA7E003B2D86 /* PopUpViewController.swift in Sources */,
 				F11974EF1AF3C2EA003B2D86 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
