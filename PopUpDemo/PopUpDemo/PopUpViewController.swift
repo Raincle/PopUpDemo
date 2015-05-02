@@ -7,16 +7,20 @@
 //
 
 import UIKit
+import iAd
 
-class PopUpViewController: UIViewController {
+class PopUpViewController: UIViewController, ADInterstitialAdDelegate {
 
     @IBOutlet weak var popUp: UIView!
+    var interstitial: ADInterstitialAd!
 
+    
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         modalPresentationStyle = .Custom
         transitioningDelegate = self
+        
     }
     
     override func viewDidLoad() {
@@ -29,6 +33,9 @@ class PopUpViewController: UIViewController {
         gestureRecognizer.delegate = self
         view.addGestureRecognizer(gestureRecognizer)
         
+        
+        interstitial = ADInterstitialAd()
+        interstitial.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -42,6 +49,13 @@ class PopUpViewController: UIViewController {
     @IBAction func close(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
+    @IBAction func showAD(sender: AnyObject) {
+        println("AD")
+        if interstitial.loaded {
+            interstitial.presentInView(view)
+        self.requestInterstitialAdPresentation()
+        }
+    }
 
     /*
     // MARK: - Navigation
@@ -54,6 +68,22 @@ class PopUpViewController: UIViewController {
     */
     
 
+    //MARK: - iAd
+    
+    func cycleInterstitial() {
+        interstitial.delegate = nil
+        interstitial = ADInterstitialAd()
+        interstitial.delegate = self
+        
+    }
+    
+    func interstitialAdDidUnload(interstitialAd: ADInterstitialAd!) {
+        cycleInterstitial()
+    }
+    
+    func interstitialAd(interstitialAd: ADInterstitialAd!, didFailWithError error: NSError!) {
+        cycleInterstitial()
+    }
 }
 
 extension PopUpViewController: UIViewControllerTransitioningDelegate {

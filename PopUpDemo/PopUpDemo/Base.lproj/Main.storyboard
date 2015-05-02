@@ -44,7 +44,7 @@
                         <outlet property="height" destination="drd-HZ-uRj" id="rCz-We-iv1"/>
                         <outlet property="popBtn" destination="lmA-0I-wgN" id="0GB-jG-t68"/>
                         <outlet property="width" destination="zOg-eY-Vzp" id="Grm-rK-Vow"/>
-                        <segue destination="UQI-WZ-t4Y" kind="presentation" identifier="showPopup" id="Xf1-Qp-jLT"/>
+                        <segue destination="UQI-WZ-t4Y" kind="presentation" identifier="showPopup" modalTransitionStyle="crossDissolve" id="Xf1-Qp-jLT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -66,49 +66,46 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lth-wg-5fM" userLabel="Pop-up View">
                                 <rect key="frame" x="60" y="209" width="200" height="150"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqg-K9-dQs">
-                                        <rect key="frame" x="160" y="0.0" width="40" height="30"/>
-                                        <state key="normal" title="Close"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCn-qd-nnd">
+                                        <rect key="frame" x="8" y="120" width="39" height="30"/>
+                                        <state key="normal" title="Show">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
-                                            <action selector="close:" destination="UQI-WZ-t4Y" eventType="touchUpInside" id="0Lw-QD-F39"/>
+                                            <action selector="showAD:" destination="UQI-WZ-t4Y" eventType="touchUpInside" id="IrA-La-j3O"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wx2-PQ-sS1">
-                                        <rect key="frame" x="0.0" y="120" width="60" height="30"/>
-                                        <state key="normal" title="购买精力">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lqr-81-nwe">
+                                        <rect key="frame" x="144" y="120" width="48" height="30"/>
+                                        <state key="normal" title="Cancel">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjN-Br-2JT">
-                                        <rect key="frame" x="140" y="120" width="60" height="30"/>
-                                        <state key="normal" title="观看广告">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
+                                        <connections>
+                                            <action selector="close:" destination="UQI-WZ-t4Y" eventType="touchUpInside" id="sp1-Qs-xhg"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="0.95000000000000007" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="wx2-PQ-sS1" firstAttribute="leading" secondItem="lth-wg-5fM" secondAttribute="leading" id="Bxk-bd-dXJ"/>
-                                    <constraint firstAttribute="bottom" secondItem="hjN-Br-2JT" secondAttribute="bottom" id="E7Q-Nl-nzL"/>
-                                    <constraint firstAttribute="trailing" secondItem="hjN-Br-2JT" secondAttribute="trailing" id="R3j-XF-Oq8"/>
-                                    <constraint firstAttribute="bottom" secondItem="wx2-PQ-sS1" secondAttribute="bottom" id="RzO-Hx-Ji6"/>
-                                    <constraint firstItem="iqg-K9-dQs" firstAttribute="top" secondItem="lth-wg-5fM" secondAttribute="top" id="WEK-Gk-P59"/>
+                                    <constraint firstItem="pCn-qd-nnd" firstAttribute="leading" secondItem="lth-wg-5fM" secondAttribute="leading" constant="8" id="64e-Q2-2pX"/>
+                                    <constraint firstAttribute="bottom" secondItem="Lqr-81-nwe" secondAttribute="bottom" id="JvZ-fs-pbR"/>
+                                    <constraint firstAttribute="bottom" secondItem="pCn-qd-nnd" secondAttribute="bottom" id="L8m-Lp-h6A"/>
                                     <constraint firstAttribute="height" constant="150" id="cut-RR-uFF"/>
-                                    <constraint firstAttribute="trailing" secondItem="iqg-K9-dQs" secondAttribute="trailing" id="dme-wo-f7O"/>
+                                    <constraint firstAttribute="trailing" secondItem="Lqr-81-nwe" secondAttribute="trailing" constant="8" id="gB7-rE-E5r"/>
                                     <constraint firstAttribute="width" constant="200" id="hnI-Tp-hFV"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="精力不足，购买精力或 观看广告免费获得3点精力" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0SI-0R-coB">
-                                <rect key="frame" x="62" y="263" width="197" height="41"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="show ADs?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uMy-mP-eH3">
+                                <rect key="frame" x="117" y="273" width="87" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.10980392160000001" green="0.67450980390000004" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="0SI-0R-coB" secondAttribute="centerY" id="C6b-7A-Z8r"/>
-                            <constraint firstAttribute="centerX" secondItem="0SI-0R-coB" secondAttribute="centerX" id="O93-g7-KLz"/>
+                            <constraint firstAttribute="centerY" secondItem="uMy-mP-eH3" secondAttribute="centerY" id="KUs-S7-8g7"/>
+                            <constraint firstAttribute="centerX" secondItem="uMy-mP-eH3" secondAttribute="centerX" id="M92-bl-HWm"/>
                             <constraint firstAttribute="centerX" secondItem="lth-wg-5fM" secondAttribute="centerX" id="Wt2-ua-Zf7"/>
                             <constraint firstAttribute="centerY" secondItem="lth-wg-5fM" secondAttribute="centerY" id="enA-ec-0et"/>
                         </constraints>
